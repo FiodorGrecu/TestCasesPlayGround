@@ -26,7 +26,7 @@ public class TestCsae5 {
 
 		driver.get(url);
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			System.out.println("Uh oh...");
 			e.printStackTrace();
@@ -44,10 +44,18 @@ public class TestCsae5 {
 		WebElement pimLink = driver.findElement(By.linkText("PIM"));
 		
 		action.moveToElement(pimLink);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		pimLink.click();
 		
-		Thread.sleep(8000);
+		WebElement empList = driver.findElement(By.linkText("Employee List"));
+		empList.click();
+		Thread.sleep(2000);
+		//Enter “00016” in ID field
+		WebElement empIdField = driver.findElement(By.xpath("//input[@class = 'oxd-input oxd-input--active']"));
+		empIdField.sendKeys("00016");
+		
+		
+		Thread.sleep(2000);
 		driver.quit();
 	}
 }
