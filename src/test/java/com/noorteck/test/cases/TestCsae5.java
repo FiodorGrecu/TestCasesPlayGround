@@ -1,5 +1,7 @@
 package com.noorteck.test.cases;
 
+import javax.swing.plaf.basic.BasicSliderUI.ActionScroller;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,6 +41,11 @@ public class TestCsae5 {
 		WebElement loginButton = driver.findElement(By.xpath("//button[@type = 'submit']"));
 		loginButton.click();
 		
+		WebElement pimLink = driver.findElement(By.linkText("PIM"));
+		
+		action.moveToElement(pimLink);
+		Thread.sleep(3000);
+		pimLink.click();
 		
 		Thread.sleep(8000);
 		driver.quit();
