@@ -49,10 +49,13 @@ public class TestCsae5 {
 		
 		WebElement empList = driver.findElement(By.linkText("Employee List"));
 		empList.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		//Enter “00016” in ID field
 		WebElement empIdField = driver.findElement(By.xpath("//input[@class = 'oxd-input oxd-input--active']"));
+		Thread.sleep(4000);
 		empIdField.sendKeys("00016");
+		
+		
 		
 		
 		Thread.sleep(2000);
