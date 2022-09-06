@@ -7,11 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 public class TestCsae5 {
 
 	public static void main(String[] args) throws InterruptedException {
-		
+
 		String url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 		String key = "webdriver.chrome.driver";
 		String path = "/Users/Work/Desktop/B7-Selenium/chromedriver";
@@ -21,7 +22,7 @@ public class TestCsae5 {
 		WebDriver driver = new ChromeDriver();
 
 		Actions action = new Actions(driver);
-		
+
 		driver.manage().window().maximize();
 
 		driver.get(url);
@@ -31,33 +32,43 @@ public class TestCsae5 {
 			System.out.println("Uh oh...");
 			e.printStackTrace();
 		}
-		
+
 		WebElement username = driver.findElement(By.name("username"));
 		username.sendKeys("Admin");
-		
+
 		WebElement password = driver.findElement(By.name("password"));
 		password.sendKeys("admin123");
-		
+
 		WebElement loginButton = driver.findElement(By.xpath("//button[@type = 'submit']"));
 		loginButton.click();
-		
+
 		WebElement pimLink = driver.findElement(By.linkText("PIM"));
-		
+
 		action.moveToElement(pimLink);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		pimLink.click();
-		
+
 		WebElement empList = driver.findElement(By.linkText("Employee List"));
 		empList.click();
-		Thread.sleep(4000);
-		//Enter “00016” in ID field
-		WebElement empIdField = driver.findElement(By.xpath("//input[@class = 'oxd-input oxd-input--active']"));
-		Thread.sleep(4000);
+		Thread.sleep(1000);
+		WebElement empIdField = driver.findElement(By.xpath("//div[2]/input"));
+
 		empIdField.sendKeys("00016");
+		Thread.sleep(1000);
+		
+		WebElement dropDown = driver.findElement(By.xpath("//div[@class = 'oxd-grid-item oxd-grid-item--gutters']"));
+
+		dropDown.click();
+//	
+		Thread.sleep(2000);
+		WebElement position = driver.findElement(By.xpath("//div[@tabindex = '0']"));
+		position.click();
 		
 		
-		
-		
+		WebElement dropDownInclude = driver.findElement(By.xpath("//div[@class = 'oxd-grid-item oxd-grid-item--gutters']"));
+
+		dropDown.click();
+
 		Thread.sleep(2000);
 		driver.quit();
 	}
