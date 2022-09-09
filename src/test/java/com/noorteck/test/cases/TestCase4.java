@@ -21,7 +21,7 @@ public class TestCase4 {
 
 		Actions action = new Actions(driver);
 
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		WebElement userNameInput = driver.findElement(By.xpath("//input[@name = 'username']"));
 		userNameInput.sendKeys("Admin");
