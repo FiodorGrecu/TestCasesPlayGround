@@ -62,7 +62,16 @@ public class TestCsae5 {
 		Thread.sleep(2000);
 //			  
 		driver.findElement(By.xpath("//div[@role='listbox']//*[contains(text(),'Full-Time Permanent')]")).click();
-//			 
+//			
+		Thread.sleep(2000);
+
+		String includeXpath = "//*[@class = 'oxd-grid-4 orangehrm-full-width-grid']/div[4]//div[@class = 'oxd-select-text-input']";
+
+		driver.findElement(By.xpath(includeXpath)).click();
+		Thread.sleep(2000);
+//			  
+		driver.findElement(By.xpath("//div[@role='listbox']//*[contains(text(),'Current and Past Employees')]")).click();
+//		
 
 		Thread.sleep(2000);
 		driver.quit();
