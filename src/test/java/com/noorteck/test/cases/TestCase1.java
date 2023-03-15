@@ -30,7 +30,7 @@ public class TestCase1 {
 		action.contextClick(button).perform();
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e) {
 			
 			System.out.println("Oops Something happened.. do it again");
